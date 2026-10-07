@@ -1,0 +1,430 @@
+.app {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 24px 20px 60px;
+}
+
+.app-header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.app-header h1 {
+  font-size: 28px;
+  color: #312e81;
+  margin-bottom: 8px;
+}
+
+.app-header p {
+  color: #555b6e;
+  max-width: 640px;
+  margin: 0 auto;
+  line-height: 1.5;
+}
+
+.app-main {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+@media (min-width: 900px) {
+  .app-main {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+  .form-section {
+    flex: 0 0 340px;
+    position: sticky;
+    top: 24px;
+  }
+  .result-section {
+    flex: 1;
+  }
+}
+
+/* ---------- Form ---------- */
+.skill-form {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 24px;
+  box-shadow: 0 2px 10px rgba(30, 30, 60, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-group label {
+  font-weight: 600;
+  font-size: 14px;
+  color: #312e81;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  border: 1px solid #d7d9e6;
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 14px;
+  font-family: inherit;
+  resize: vertical;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: #4f46e5;
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.15);
+}
+
+.primary-btn {
+  background: #4f46e5;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 18px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.primary-btn:hover:not(:disabled) {
+  background: #4338ca;
+}
+
+.primary-btn:disabled {
+  background: #a5a6f6;
+  cursor: not-allowed;
+}
+
+.error-message {
+  margin-top: 12px;
+  color: #b91c1c;
+  background: #fee2e2;
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+/* ---------- Results ---------- */
+.results {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 28px;
+  box-shadow: 0 2px 10px rgba(30, 30, 60, 0.08);
+}
+
+.results h2 {
+  font-size: 20px;
+  color: #1f2330;
+  margin-bottom: 20px;
+}
+
+.highlight {
+  color: #4f46e5;
+}
+
+.match-summary {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+}
+
+.match-circle {
+  --size: 100px;
+  width: var(--size);
+  height: var(--size);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  font-weight: 700;
+  color: #312e81;
+  background: conic-gradient(
+    #4f46e5 calc(var(--pct) * 1%),
+    #e5e7f5 0
+  );
+  position: relative;
+}
+
+.match-circle::before {
+  content: "";
+  position: absolute;
+  width: 76px;
+  height: 76px;
+  border-radius: 50%;
+  background: #fff;
+}
+
+.match-circle span {
+  position: relative;
+  z-index: 1;
+}
+
+.readiness {
+  font-size: 16px;
+  margin: 0 0 4px;
+}
+
+.skill-columns {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  margin-bottom: 28px;
+}
+
+.skill-col {
+  flex: 1;
+  min-width: 220px;
+}
+
+.skill-col h3 {
+  font-size: 15px;
+  margin-bottom: 10px;
+}
+
+.skill-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.skill-col li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f6f7fc;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.badge {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 999px;
+  text-transform: uppercase;
+}
+
+.badge-high {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+.badge-medium {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.badge-low {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.recommendations h3 {
+  font-size: 16px;
+  margin-bottom: 14px;
+}
+
+.rec-block {
+  border: 1px solid #e5e7f5;
+  border-radius: 10px;
+  padding: 14px 16px;
+  margin-bottom: 14px;
+}
+
+.rec-block h4 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 8px;
+  font-size: 15px;
+}
+
+.course-list {
+  list-style: disc;
+  padding-left: 20px;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 14px;
+}
+
+.course-list a {
+  color: #4f46e5;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.course-list a:hover {
+  text-decoration: underline;
+}
+
+.empty {
+  color: #888;
+  font-size: 13px;
+  font-style: italic;
+}
+
+.app-footer {
+  text-align: center;
+  margin-top: 40px;
+  color: #888;
+  font-size: 13px;
+}
+
+/* ---------- Tab switcher ---------- */
+.tab-switcher {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.tab {
+  background: #e5e7f5;
+  border: none;
+  border-radius: 999px;
+  padding: 10px 18px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #4f46e5;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.tab.active {
+  background: #4f46e5;
+  color: #fff;
+}
+
+/* ---------- Resume upload ---------- */
+.resume-upload {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 24px;
+  box-shadow: 0 2px 10px rgba(30, 30, 60, 0.08);
+}
+
+.resume-upload h2 {
+  font-size: 18px;
+  margin: 0 0 6px;
+  color: #312e81;
+}
+
+.subtext {
+  font-size: 13px;
+  color: #666;
+  margin-bottom: 16px;
+}
+
+.resume-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: 20px;
+}
+
+.secondary-btn {
+  margin-top: 16px;
+  background: #fff;
+  color: #4f46e5;
+  border: 2px solid #4f46e5;
+  border-radius: 8px;
+  padding: 10px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.secondary-btn:hover {
+  background: #eef0ff;
+}
+
+.ats-results h3 {
+  font-size: 15px;
+  margin: 20px 0 10px;
+}
+
+.ats-breakdown {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.ats-breakdown li {
+  display: grid;
+  grid-template-columns: 160px 1fr 70px;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+}
+
+.ats-label {
+  color: #333;
+  font-weight: 600;
+}
+
+.ats-bar-wrap {
+  background: #eceefa;
+  border-radius: 999px;
+  height: 8px;
+  overflow: hidden;
+}
+
+.ats-bar {
+  display: block;
+  height: 100%;
+  background: #4f46e5;
+  border-radius: 999px;
+}
+
+.ats-score-text {
+  text-align: right;
+  color: #555;
+}
+
+.suggestions ul {
+  padding-left: 20px;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 14px;
+  color: #444;
+}
+
+.skill-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.chip {
+  background: #eef0ff;
+  color: #4f46e5;
+  border-radius: 999px;
+  padding: 6px 12px;
+  font-size: 13px;
+  font-weight: 600;
+}
